@@ -18,3 +18,7 @@ This repository contains files that can be used in Visual Studio Code to work on
 ### Run Labs
 
 1. Run `make run-lab-xx` where `xx` is the lab number.
+
+### Clean Up
+
+1. Run `make clean`.
