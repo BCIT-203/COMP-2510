@@ -6,7 +6,6 @@ lab-0 := $(BIN_DIR)/lab\ 0/hello
 lab-0: $(lab-0)
 .PHONY: run-lab-0
 run-lab-0: lab-0
-	@clear
 	@echo '>>>> start Lab 0 >>>>'
 	@$(lab-0)
 	@echo '<<<<  end  Lab 0 <<<<'
@@ -16,7 +15,6 @@ lab-1 := $(BIN_DIR)/lab\ 1/Task\ 1 $(BIN_DIR)/lab\ 1/Task\ 2 $(BIN_DIR)/lab\ 1/T
 lab-1: $(lab-1)
 .PHONY: run-lab-1
 run-lab-1: lab-1
-	@clear
 	@echo '>>>> start Lab 1 >>>>'
 	@for file in $(lab-1); do \
 		echo ">>>>>>>> start $$(basename "$${file}") >>>>>>>>"; \
@@ -40,10 +38,10 @@ clean:
 .SECONDARY:
 
 $(BIN_DIR)/%: %.c
-	@while true; do \
-		$(CC) -o '$@' '$<' && break \
-			|| mkdir -p "$$(dirname '$@')"; \
-	done
+	@if ! [ -d "$$(dirname '$@')" ]; then \
+		mkdir -p "$$(dirname '$@')"; \
+	fi
+	$(CC) -o '$@' '$<'
 
 %:
 	@echo $@ not found
