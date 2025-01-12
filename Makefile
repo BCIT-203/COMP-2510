@@ -1,6 +1,16 @@
 CC := gcc
 BIN_DIR := ./bin/
 
+lab-0 := $(BIN_DIR)/lab\ 0/hello
+.PHONY: lab-0
+lab-0: $(lab-0)
+.PHONY: run-lab-0
+run-lab-0: lab-0
+	@clear
+	@echo '>>>> start Lab 0 >>>>'
+	@$(lab-0)
+	@echo '<<<<  end  Lab 0 <<<<'
+
 .PHONY: setup
 setup:
 	@command -v apk 2>&1 > /dev/null && apk update && apk add gcc libc-dev || true
