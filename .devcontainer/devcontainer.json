@@ -1,0 +1,11 @@
+{
+	"name": "Alpine",
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+	"features": {
+		"ghcr.io/silver886/devcontainers-features/make:1": {}
+	},
+	"containerEnv": {
+		"PODMAN_USERNS":"keep-id"
+	},
+	"containerUser": "vscode"
+}
