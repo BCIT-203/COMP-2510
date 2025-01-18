@@ -1,7 +1,7 @@
 CC := gcc
 BIN_DIR := ./bin/
 
-lab-0 := $(BIN_DIR)/lab\ 0/hello
+lab-0 := $(BIN_DIR)/Lab\ 0/hello
 .PHONY: lab-0
 lab-0: $(lab-0)
 .PHONY: run-lab-0
@@ -10,7 +10,7 @@ run-lab-0: lab-0
 	@$(lab-0)
 	@echo '<<<<  end  Lab 0 <<<<'
 
-lab-1 := $(BIN_DIR)/lab\ 1/Task\ 1 $(BIN_DIR)/lab\ 1/Task\ 2 $(BIN_DIR)/lab\ 1/Task\ 3 $(BIN_DIR)/lab\ 1/Task\ 4 $(BIN_DIR)/lab\ 1/Task\ 5 $(BIN_DIR)/lab\ 1/Task\ 6 $(BIN_DIR)/lab\ 1/Task\ 7 $(BIN_DIR)/lab\ 1/Task\ 8 $(BIN_DIR)/lab\ 1/Task\ 9 $(BIN_DIR)/lab\ 1/Task\ 10
+lab-1 := $(BIN_DIR)/Lab\ 1/Task\ 1 $(BIN_DIR)/Lab\ 1/Task\ 2 $(BIN_DIR)/Lab\ 1/Task\ 3 $(BIN_DIR)/Lab\ 1/Task\ 4 $(BIN_DIR)/Lab\ 1/Task\ 5 $(BIN_DIR)/Lab\ 1/Task\ 6 $(BIN_DIR)/Lab\ 1/Task\ 7 $(BIN_DIR)/Lab\ 1/Task\ 8 $(BIN_DIR)/Lab\ 1/Task\ 9 $(BIN_DIR)/Lab\ 1/Task\ 10
 .PHONY: lab-1
 lab-1: $(lab-1)
 .PHONY: run-lab-1
@@ -22,6 +22,19 @@ run-lab-1: lab-1
 		echo "<<<<<<<<  end  $$(basename "$${file}") <<<<<<<<"; \
 	done
 	@echo '<<<<  end  Lab 1 <<<<'
+
+lab-2 := $(BIN_DIR)/Lab\ 2/Task\ 1 $(BIN_DIR)/Lab\ 2/Task\ 2 $(BIN_DIR)/Lab\ 2/Task\ 3 $(BIN_DIR)/Lab\ 2/Task\ 4 $(BIN_DIR)/Lab\ 2/Task\ 5 $(BIN_DIR)/Lab\ 2/Task\ 6 $(BIN_DIR)/Lab\ 2/Task\ 7 $(BIN_DIR)/Lab\ 2/Task\ 8 $(BIN_DIR)/Lab\ 2/Task\ 9 $(BIN_DIR)/Lab\ 2/Task\ 10
+.PHONY: lab-2
+lab-2: $(lab-2)
+.PHONY: run-lab-2
+run-lab-2: lab-2
+	@echo '>>>> start Lab 2 >>>>'
+	@for file in $(lab-2); do \
+		echo ">>>>>>>> start $$(basename "$${file}") >>>>>>>>"; \
+		"$${file}"; \
+		echo "<<<<<<<<  end  $$(basename "$${file}") <<<<<<<<"; \
+	done
+	@echo '<<<<  end  Lab 2 <<<<'
 
 .PHONY: setup
 setup:
